@@ -2,6 +2,8 @@ package com.biblioteca.biblioteca.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,8 +33,9 @@ public class Socio {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
         name = "ejemplar_socio", joinColumns=@JoinColumn(name = "dni", referencedColumnName = "dni"),
-        inverseJoinColumns= @JoinColumn(name = "id_ejemplar", referencedColumnName = "id_ejemplar")
+        inverseJoinColumns= @JoinColumn(name = "id_ejemplar", referencedColumnName = "id_ejemplar")     
     )
+    @JsonIgnoreProperties("socios")
     private List<Ejemplar> ejemplares;
 
     public String getDni() {

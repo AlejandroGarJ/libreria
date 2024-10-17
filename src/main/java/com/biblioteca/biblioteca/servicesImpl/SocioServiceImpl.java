@@ -5,14 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biblioteca.biblioteca.dto.SocioDTO;
 import com.biblioteca.biblioteca.models.Socio;
 import com.biblioteca.biblioteca.repositories.EjemplarRepository;
 import com.biblioteca.biblioteca.repositories.SocioRepository;
 import com.biblioteca.biblioteca.services.ISocioService;
 
 @Service
-public class SocioService implements ISocioService{
+public class SocioServiceImpl implements ISocioService{
     
     @Autowired
     private SocioRepository socioRepository;
@@ -26,10 +25,7 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public Socio createSocio(SocioDTO socioDTO){
-
-        Socio socio = socioDTO.getSocio();
-        socio.setEjemplares(ejemplarRepository.findAllById(socioDTO.getListaIdEjemplares()));
+    public Socio createSocio(Socio socio){
         return socioRepository.save(socio);
     }
 

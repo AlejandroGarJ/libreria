@@ -10,7 +10,7 @@ import com.biblioteca.biblioteca.repositories.TemaRepository;
 import com.biblioteca.biblioteca.services.ITemaService;
 
 @Service
-public class TemaService implements ITemaService{
+public class TemaServiceImpl implements ITemaService{
     
     @Autowired
     private TemaRepository temaRepository;

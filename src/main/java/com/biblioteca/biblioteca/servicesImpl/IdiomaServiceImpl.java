@@ -10,7 +10,7 @@ import com.biblioteca.biblioteca.repositories.IdiomaRepository;
 import com.biblioteca.biblioteca.services.IIdiomaService;
 
 @Service
-public class IdiomaService implements IIdiomaService{
+public class IdiomaServiceImpl implements IIdiomaService{
     
     @Autowired
     private IdiomaRepository idiomaRepository;

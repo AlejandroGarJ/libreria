@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.biblioteca.biblioteca.models.Ejemplar;
 import com.biblioteca.biblioteca.repositories.EjemplarRepository;
 import com.biblioteca.biblioteca.repositories.LibroRepository;
 import com.biblioteca.biblioteca.services.IEjemplarService;
 
 @Service
-public class EjemplarService implements IEjemplarService{
+public class EjemplarServiceImpl implements IEjemplarService{
     
     @Autowired
     private EjemplarRepository ejemplarRepository;
@@ -30,10 +31,8 @@ public class EjemplarService implements IEjemplarService{
     }
 
     @Override 
-    public Ejemplar createEjemplar(int libroId){
+    public Ejemplar createEjemplar(Ejemplar ejemplar){
         try {
-            Ejemplar ejemplar = new Ejemplar();
-            ejemplar.setLibro(libroRepository.findById(libroId));
             return ejemplarRepository.save(ejemplar);
         } catch (Exception e) {
             System.out.println("Error al crear Ejemplar " + e);

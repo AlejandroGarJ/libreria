@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.biblioteca.models.Tema;
-import com.biblioteca.biblioteca.servicesImpl.TemaService;
+import com.biblioteca.biblioteca.servicesImpl.TemaServiceImpl;
 
 
 @RestController  
@@ -19,7 +19,7 @@ import com.biblioteca.biblioteca.servicesImpl.TemaService;
 public class TemaController {
     
     @Autowired
-    private TemaService temaService;
+    private TemaServiceImpl temaService;
 
      @GetMapping("/getAll")  
     public List<Tema> getAll() {

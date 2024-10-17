@@ -2,7 +2,7 @@ package com.biblioteca.biblioteca.models;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,7 +24,7 @@ public class Tema {
 
     /* Relacion Libros */
    @ManyToMany(mappedBy="temas")
-   @JsonIgnore
+    @JsonIgnoreProperties("temas")
    private List<Libro> libros;
 
     public int getId_tema() {

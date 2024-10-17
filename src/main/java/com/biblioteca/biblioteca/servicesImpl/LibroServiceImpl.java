@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biblioteca.biblioteca.dto.LibroDTO;
 import com.biblioteca.biblioteca.models.Libro;
 import com.biblioteca.biblioteca.repositories.AutorRepository;
 import com.biblioteca.biblioteca.repositories.LibroRepository;
@@ -13,7 +12,7 @@ import com.biblioteca.biblioteca.repositories.TemaRepository;
 import com.biblioteca.biblioteca.services.ILibroService;
 
 @Service
-public class LibroService implements ILibroService {
+public class LibroServiceImpl implements ILibroService {
     
     @Autowired
     private LibroRepository libroRepository;
@@ -40,18 +39,15 @@ public class LibroService implements ILibroService {
             System.out.println("Error en getLibroById: " + e);
             return null;
         }
-        
     }
 
     @Override
-    public Libro saveLibro(LibroDTO libroDTO) {
+    public Libro saveLibro(Libro libro) {
         try {
 
-            Libro libro = libroDTO.getLibro();
-            libro.setTemas(temaRepository.findAllById(libroDTO.getListaIdTemas()));
-            libro.setAutores(autorRepository.findAllById(libroDTO.getListaIdAutores()));
-            libroRepository.save(libro);
-            return libro;
+            
+            /* return libroRepository.save(libro); */
+            return null;
         } catch (Exception e) {
             System.out.println("Error en saveLibr: " + e);
             return null;

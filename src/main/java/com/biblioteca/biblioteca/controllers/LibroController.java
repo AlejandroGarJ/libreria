@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.biblioteca.dto.LibroDTO;
 import com.biblioteca.biblioteca.models.Libro;
-import com.biblioteca.biblioteca.servicesImpl.LibroService;
+import com.biblioteca.biblioteca.servicesImpl.LibroServiceImpl;
 
 
 @RestController  
@@ -20,7 +19,7 @@ import com.biblioteca.biblioteca.servicesImpl.LibroService;
 public class LibroController {
     
     @Autowired
-    private LibroService libroService;
+    private LibroServiceImpl libroService;
 
     @GetMapping("/getAll")  
     public List<Libro> decirHola() {
@@ -33,8 +32,8 @@ public class LibroController {
     }
 
     @PostMapping("/create")  // Cambia la URL según sea necesario
-    public Libro createLibro(@RequestBody LibroDTO libroDTO) {
-        return libroService.saveLibro(libroDTO);
+    public Libro createLibro(@RequestBody Libro libro) {
+        return libroService.saveLibro(libro);
     }
 
     @PostMapping("/delete")  

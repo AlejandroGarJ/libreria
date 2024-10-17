@@ -5,20 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biblioteca.biblioteca.dto.AutorDTO;
 import com.biblioteca.biblioteca.models.Autor;
 import com.biblioteca.biblioteca.repositories.AutorRepository;
-import com.biblioteca.biblioteca.repositories.LibroRepository;
 import com.biblioteca.biblioteca.services.IAutorService;
 
 @Service
-public class AutorService implements IAutorService{
+public class AutorServiceImpl implements IAutorService{
     
     @Autowired
     private AutorRepository autorRepository;
-
-    @Autowired 
-    private LibroRepository libroRepository;
 
     @Override
     public List<Autor> getAllAutores(){

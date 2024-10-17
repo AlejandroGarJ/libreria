@@ -8,7 +8,7 @@ public interface ILibroService {
     
     List<Libro> getAllLibros();
     Libro getLibroById(int libroId);
-    Libro saveLibro(com.biblioteca.biblioteca.dto.LibroDTO libroDTO);
+    Libro saveLibro(Libro libro);
     void deleteLibroById(int libroId);
 
 }

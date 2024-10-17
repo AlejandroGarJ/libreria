@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.biblioteca.models.Ejemplar;
-import com.biblioteca.biblioteca.servicesImpl.EjemplarService;
+import com.biblioteca.biblioteca.servicesImpl.EjemplarServiceImpl;
 
 
 @RestController  
@@ -19,7 +19,7 @@ import com.biblioteca.biblioteca.servicesImpl.EjemplarService;
 public class EjemplarController {
     
     @Autowired
-    private EjemplarService ejemplarService;
+    private EjemplarServiceImpl ejemplarService;
 
      @GetMapping("/getAll")  
     public List<Ejemplar> getAll() {
@@ -27,8 +27,8 @@ public class EjemplarController {
     }
 
     @PostMapping("/create")  // Cambia la URL según sea necesario
-    public Ejemplar createEjemplar(@RequestBody Map<String, Integer> request) {
-        return ejemplarService.createEjemplar(request.get("idLibro"));
+    public Ejemplar createEjemplar(@RequestBody Ejemplar ejemplar) {
+        return ejemplarService.createEjemplar(ejemplar);
     }
 
     @PostMapping("/findById")

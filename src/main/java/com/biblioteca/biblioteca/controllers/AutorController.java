@@ -10,17 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.biblioteca.dto.AutorDTO;
 import com.biblioteca.biblioteca.models.Autor;
-import com.biblioteca.biblioteca.servicesImpl.AutorService;
-
+import com.biblioteca.biblioteca.servicesImpl.AutorServiceImpl;
 
 @RestController  
 @RequestMapping("/autor") 
 public class AutorController {
     
     @Autowired
-    private AutorService autorService;
+    private AutorServiceImpl autorService;
 
      @GetMapping("/getAll")  
     public List<Autor> getAll() {

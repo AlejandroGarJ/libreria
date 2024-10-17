@@ -41,15 +41,16 @@ public class Libro {
     private List<Ejemplar> ejemplares;
 
     /* Relación Temas */
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "libro_tema", joinColumns=@JoinColumn(name = "id_libro", referencedColumnName = "id_libro"),
         inverseJoinColumns= @JoinColumn(name = "id_tema", referencedColumnName = "id_tema")
     )
+    @JsonIgnoreProperties("libros")
     private List<Tema> temas;
 
     /* Relacion Autores */
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
         
         name = "libro_autor", joinColumns=@JoinColumn(name = "id_libro", referencedColumnName = "id_libro"),

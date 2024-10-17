@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.biblioteca.models.Idioma;
-import com.biblioteca.biblioteca.servicesImpl.IdiomaService;
+import com.biblioteca.biblioteca.servicesImpl.IdiomaServiceImpl;
 
 @RestController  
 @RequestMapping("/idioma") 
 public class IdiomaController {
 
     @Autowired
-    private IdiomaService idiomaService;
+    private IdiomaServiceImpl idiomaService;
 
      @GetMapping("/getAll")  
     public List<Idioma> getAll() {

@@ -10,16 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.biblioteca.dto.SocioDTO;
 import com.biblioteca.biblioteca.models.Socio;
-import com.biblioteca.biblioteca.servicesImpl.SocioService;
+import com.biblioteca.biblioteca.servicesImpl.SocioServiceImpl;
 
 @RestController  
 @RequestMapping("/socio") 
 public class SocioController {
     
     @Autowired
-    private SocioService socioService;
+    private SocioServiceImpl socioService;
 
     @GetMapping("/getAll")  
     public List<Socio> getAll() {
@@ -32,8 +31,8 @@ public class SocioController {
     }
     
     @PostMapping("/create")
-    public Socio createSocio(@RequestBody SocioDTO request) {
-        return socioService.createSocio(request);
+    public Socio createSocio(@RequestBody Socio socio) {
+        return socioService.createSocio(socio);
     }
 
     @PostMapping("/deleteById")

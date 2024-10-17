@@ -6,7 +6,7 @@ import com.biblioteca.biblioteca.models.Ejemplar;
 
 public interface IEjemplarService {
      List<Ejemplar> getAllEjemplares();
-    Ejemplar createEjemplar(int libroId);
+    Ejemplar createEjemplar(Ejemplar ejemplar);
     boolean deleteEjemplarById(int idEjemplar);
     Ejemplar findEjemplarById(int idEjemplar);
 }   
