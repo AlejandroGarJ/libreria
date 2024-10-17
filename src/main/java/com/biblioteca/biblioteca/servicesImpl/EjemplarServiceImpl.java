@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.biblioteca.biblioteca.models.Ejemplar;
 import com.biblioteca.biblioteca.repositories.EjemplarRepository;
-import com.biblioteca.biblioteca.repositories.LibroRepository;
 import com.biblioteca.biblioteca.services.IEjemplarService;
 
 @Service
@@ -15,9 +14,6 @@ public class EjemplarServiceImpl implements IEjemplarService{
     
     @Autowired
     private EjemplarRepository ejemplarRepository;
-
-    @Autowired 
-    private LibroRepository libroRepository;
 
     @Override
     public List<Ejemplar> getAllEjemplares(){

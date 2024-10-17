@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.biblioteca.biblioteca.models.Socio;
-import com.biblioteca.biblioteca.repositories.EjemplarRepository;
 import com.biblioteca.biblioteca.repositories.SocioRepository;
 import com.biblioteca.biblioteca.services.ISocioService;
 
@@ -15,9 +14,6 @@ public class SocioServiceImpl implements ISocioService{
     
     @Autowired
     private SocioRepository socioRepository;
-
-    @Autowired
-    private EjemplarRepository ejemplarRepository;
 
     @Override
     public List<Socio> getAllSocios() {
